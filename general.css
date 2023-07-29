@@ -1,0 +1,149 @@
+:root {
+  --default-height: 150px;
+  --default-width: 150px;
+}
+
+body:not(.below) {
+    overflow: hidden;
+}
+
+.target {
+  animation-fill-mode: forwards;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px orangered;
+  width: var(--default-width);
+  height: var(--default-height);
+  overflow: visible;
+  animation: pulse-red 2s 10s;
+}
+
+.sol {
+  background-color: red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: calc(0.75 * var(--default-width));
+  animation: pulse-red 2s infinite;
+}
+
+.supernovae,
+.supernovae1,
+.supernovae2 {
+  animation-fill-mode: forwards;
+  border-radius: 50%;
+  /* box-shadow: 0px 0px 30px orangered; */
+  overflow: visible;
+}
+
+.supernovae {
+  width: var(--default-width);
+  height: var(--default-height);
+  background-color: orange;
+}
+.supernovae1 {
+  background-color: darkred;
+}
+
+.supernovae2 {
+  background-color: darkorange;
+}
+
+/* class to center everything easily */
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.below {
+  margin-top: calc(0.75 * var(--default-height));
+  position: absolute;
+  width: auto;
+  text-align: center;
+  transition: 500ms;
+}
+
+@keyframes startScaling {
+  0% {
+    width: 150px;
+  }
+  100% {
+    width: 325px;
+    height: 325px;
+  }
+}
+
+@keyframes startSupernova {
+  0% {
+    width: 325px;
+    height: 325px;
+  }
+  100% {
+    width: 700px;
+    height: 700px;
+  }
+}
+
+@keyframes shrinkToNeutronStar {
+  0% {
+    width: 325px;
+    height: 325px;
+  }
+  25% {
+    width: 162.5px;
+    height: 162.5px;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+  }
+  75% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    width: 700px;
+    height: 700px;
+  }
+  100% {
+    width: 1200px;
+    height: 1200px;
+  }
+}
+
+@keyframes wave3 {
+  0% {
+    width: 1200px;
+  }
+  100% {
+    width: 2400px;
+    height: 2400px;
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
